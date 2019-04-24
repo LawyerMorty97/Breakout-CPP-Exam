@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <map>
+#include <vector>
 #include <SDL.h>
 #include <SDL_image.h>
 
@@ -19,6 +20,7 @@ public:
 
     Image* Add(std::string name, std::string file, int x, int y, int w, int h);
     Image* Get(std::string name);
+    Image* Clone(std::string name);
     void Draw();
 protected:
     std::map<std::string, Image*> images;

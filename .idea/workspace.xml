@@ -12,33 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1b9a61d-d2b6-47b5-8dff-b164ffb3ccea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Element.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Element.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Font.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Font.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/IComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/IPosition.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Screen.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Screen.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Text.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Text.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gameparts/Info.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gameparts/Info.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/C++_Exam.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/C++_Exam.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/images/cursor.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/images/lmorty.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/images/rick.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Image.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Image.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Image.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Image.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Image.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Image.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Image.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Managers/ImageManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Managers/ImageManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Managers/InputManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Managers/InputManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gameparts/Info.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gameparts/Info.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gameparts/Info.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gameparts/Info.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Managers/ImageManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Managers/ImageManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Managers/ImageManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Managers/ImageManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.h" afterDir="false" />
     </list>
@@ -57,8 +39,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Managers/ImageManager.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
-                  <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+                <state relative-caret-position="331">
+                  <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
                   <folding>
                     <element signature="e#116#135#0" expanded="true" />
                   </folding>
@@ -69,8 +51,26 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Managers/ImageManager.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+                <state relative-caret-position="127">
+                  <caret line="17" column="97" selection-start-line="17" selection-start-column="97" selection-end-line="17" selection-end-column="97" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Utils.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="280">
+                  <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Utils.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -78,20 +78,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Gameparts/Info.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="331">
-                  <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-                  <folding>
-                    <element signature="e#98#114#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="59">
+                  <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Gameparts/Info.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="419">
-                  <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+                <state relative-caret-position="249">
+                  <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
                   <folding>
                     <element signature="e#53#90#0" expanded="true" />
                   </folding>
@@ -99,11 +96,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Core.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="199">
-                  <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+                <state relative-caret-position="352">
+                  <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -111,7 +108,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Components/Text.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
+                <state relative-caret-position="544">
                   <caret line="32" column="14" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="14" />
                   <folding>
                     <element signature="e#98#114#0" expanded="true" />
@@ -123,8 +120,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Components/Image.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="314">
-                  <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+                <state relative-caret-position="178">
+                  <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
                   <folding>
                     <element signature="e#114#130#0" expanded="true" />
                   </folding>
@@ -135,8 +132,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Components/Image.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
-                  <caret line="57" column="21" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+                <state relative-caret-position="144">
+                  <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
@@ -144,7 +141,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Components/Text.cpp">
               <provider selected="true" editor-type-id="text-editor">
@@ -157,7 +154,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Components/Screen.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-264">
+                <state relative-caret-position="493">
                   <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
                 </state>
               </provider>
@@ -166,11 +163,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Components/IComponent.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
+                <state relative-caret-position="280">
                   <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-                  <folding>
-                    <element signature="e#110#126#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -224,8 +218,6 @@
         <option value="$PROJECT_DIR$/src/Gameparts/InfoMenu.cpp" />
         <option value="$PROJECT_DIR$/src/Gameparts/InfoMenu.h" />
         <option value="$PROJECT_DIR$/src/Core.h" />
-        <option value="$PROJECT_DIR$/src/Utils.h" />
-        <option value="$PROJECT_DIR$/src/Utils.cpp" />
         <option value="$PROJECT_DIR$/src/Components/IComponent.h" />
         <option value="$PROJECT_DIR$/src/Components/Font.h" />
         <option value="$PROJECT_DIR$/src/Components/Font.cpp" />
@@ -235,13 +227,15 @@
         <option value="$PROJECT_DIR$/src/Components/Text.cpp" />
         <option value="$PROJECT_DIR$/src/Components/IPosition.h" />
         <option value="$PROJECT_DIR$/src/Components/Text.h" />
+        <option value="$PROJECT_DIR$/src/Core.cpp" />
         <option value="$PROJECT_DIR$/src/Gameparts/Info.h" />
-        <option value="$PROJECT_DIR$/src/Gameparts/Info.cpp" />
         <option value="$PROJECT_DIR$/src/Components/Image.h" />
         <option value="$PROJECT_DIR$/src/Components/Image.cpp" />
-        <option value="$PROJECT_DIR$/src/Managers/ImageManager.cpp" />
         <option value="$PROJECT_DIR$/src/Managers/ImageManager.h" />
-        <option value="$PROJECT_DIR$/src/Core.cpp" />
+        <option value="$PROJECT_DIR$/src/Utils.cpp" />
+        <option value="$PROJECT_DIR$/src/Utils.h" />
+        <option value="$PROJECT_DIR$/src/Managers/ImageManager.cpp" />
+        <option value="$PROJECT_DIR$/src/Gameparts/Info.cpp" />
       </list>
     </option>
   </component>
@@ -259,46 +253,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="C++_Arbeidskrav" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Breakout_Exam" type="462c0819:PsiDirectoryNode" />
+              <item name="Breakout-Exam" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="C++_Arbeidskrav" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Breakout_Exam" type="462c0819:PsiDirectoryNode" />
+              <item name="Breakout-Exam" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="C++_Arbeidskrav" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Breakout_Exam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="C++_Arbeidskrav" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Breakout_Exam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Gameparts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="C++_Arbeidskrav" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Breakout_Exam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Managers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -359,28 +336,29 @@
       <workItem from="1552839917696" duration="631000" />
       <workItem from="1555938357380" duration="98000" />
       <workItem from="1556018017479" duration="44881000" />
+      <workItem from="1556115969088" duration="4761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116296000" />
+    <option name="totallyTimeSpent" value="121057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14658849" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14818764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34994584" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34994584" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" visible="true" weight="0.33152762" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.33152762" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -503,43 +481,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gameparts/InfoMenu.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-          <folding>
-            <element signature="e#53#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gameparts/InfoMenu.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="e#106#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <element signature="e#110#129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gameparts/InfoMenu.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/Gameparts/InfoMenu.h" />
     <entry file="file://$PROJECT_DIR$/src/Components/Screen.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -551,20 +494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Text.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Screen.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -592,40 +521,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/IComponent.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding>
-            <element signature="e#110#126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gameparts/Info.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
-          <folding>
-            <element signature="e#53#90#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Core.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Text.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="14" />
-          <folding>
-            <element signature="e#98#114#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -639,10 +538,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Text.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="14" />
+          <folding>
+            <element signature="e#98#114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Text.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Screen.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/IComponent.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gameparts/Info.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Image.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        <state relative-caret-position="178">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
           <folding>
             <element signature="e#114#130#0" expanded="true" />
           </folding>
@@ -651,42 +588,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Image.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="57" column="21" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gameparts/Info.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding>
-            <element signature="e#98#114#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="144">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Managers/ImageManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="331">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
           <folding>
             <element signature="e#116#135#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Managers/ImageManager.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+        <state relative-caret-position="127">
+          <caret line="17" column="97" selection-start-line="17" selection-start-column="97" selection-end-line="17" selection-end-column="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Core.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        <state relative-caret-position="352">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gameparts/Info.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="e#53#90#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

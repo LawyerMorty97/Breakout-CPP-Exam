@@ -22,6 +22,8 @@ public:
     Image(std::string filename, int x, int y, int w, int h);
     ~Image();
 
+    std::string filename;
+
     bool Draw();
 
     std::pair<int, int> GetSurfaceSize();

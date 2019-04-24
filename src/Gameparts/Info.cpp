@@ -23,11 +23,11 @@ Info::Info() {
     const int width = 300;
     const int header_height = 128;
     // Header
-    background_header = new Image("interaction_bgd.png", 0, 0, width, header_height);
+    background_header = ImageManager::instance()->Add("header_bg", "interaction_bgd.png", 0, 0, width, header_height);
     background_header->setPosition(Image::Set, Screen::instance()->corner(width, header_height, Screen::TopRight));
     // Body
     int h = Screen::instance()->ScreenHeight - header_height;
-    background_body = new Image("gradient_bgd.png", 0, 0, width, h);
+    background_body = ImageManager::instance()->Add("gradient_bg", "gradient_bgd.png", 0, 0, width, h);
     background_body->setPosition(Image::Set, Screen::instance()->corner(width, h, Screen::TopRight));
     background_body->setPosition(Image::Modify, 0, header_height);
 
@@ -41,15 +41,23 @@ Info::Info() {
     subtitle->setPosition(Text::Modify, subX, subY);
 
     // Stars
-    star_a = new Image("star.png", 0, 0, 16, 16);
-    star_b = new Image("star.png", 0, 0, 16, 16);
+    star_a = ImageManager::instance()->Add("star", "star.png", 0, 0, 32, 32);
+    star_a->setPosition(Image::Set, background_body->getPosition());
+    star_b = ImageManager::instance()->Clone("star");
+
+    int sep = 12;
+    for (int i = 0; i < 12; i++) {
+        for (int j = 0; j < 24; j++) {
+            Image* im = ImageManager::instance()->Clone("star");
+            im->setPosition(Image::Modify, i * (12 + sep), j * (12 + sep));
+
+        }
+    }
 }
 
 Info::~Info() {
     delete title, subtitle;
     delete chaletBig, chaletSmall;
-    delete background_header, background_body;
-    delete star_a, star_b;
 }
 
 void Info::Draw() {

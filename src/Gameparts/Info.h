@@ -7,6 +7,7 @@
 
 #include <tuple>
 #include "../Components/Image.h"
+#include "../Managers/ImageManager.h"
 #include "../Components/Screen.h"
 #include "../Components/Font.h"
 #include "../Components/Text.h"

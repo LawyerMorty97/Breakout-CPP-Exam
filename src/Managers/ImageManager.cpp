@@ -31,6 +31,24 @@ Image* ImageManager::Add(std::string name, std::string image, int x, int y, int 
     return new_image;
 }
 
+Image* ImageManager::Clone(std::string name) {
+    Image* image = nullptr;
+
+    if (images[name] != nullptr) {
+        Image* parent = images[name];
+        std::pair pos = parent->getPosition();
+        std::pair size = parent->getSize();
+
+        //image = new Image(images[name]->filename, pos.first, pos.second, size.first, size.second);
+        std::string clone_id = name + "_clone_" + Utils::randomString(10);
+
+        image = Add(clone_id, parent->filename, pos.first, pos.second, size.first, size.second);
+        //image = parent;
+    }
+
+    return image;
+}
+
 Image* ImageManager::Get(std::string name) {
     Image* image = nullptr;
 

@@ -10,6 +10,8 @@ Image::Image(std::string filename, int x, int y, int w, int h) {
     window = GetWindow();
     renderer = GetRenderer();
 
+    this->filename = filename;
+
     //surface = SDL_LoadBMP(Utils::stringToChar("images/" + filename));
     std::string file = "content/images/" + filename;
     surface = IMG_Load(file.c_str());

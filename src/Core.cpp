@@ -29,7 +29,7 @@ void Core::Setup(std::string title, int w_size, int h_size) {
     std::tuple<int, int> lpos = Screen::instance()->corner(128, 128, Screen::BottomLeft);
     imageManager->Add("morty", "lmorty.bmp", std::get<0>(lpos), std::get<1>(lpos), 128, 128);
     imageManager->Add("rick", "rick.bmp", 128, 0, 128, 128);
-    cursor = new Image("cursor.png", 0, 0, 32, 32);
+    cursor = imageManager->Add("cursor", "cursor.png", 0, 0, 32, 32);
 
     info = new Info;
 
@@ -44,7 +44,6 @@ void Core::Setup(std::string title, int w_size, int h_size) {
 void Core::Quit() {
     delete input;
     delete imageManager;
-    delete cursor;
     delete info;
 
     Utils::message("Deinitialized ImGui");

@@ -6,11 +6,13 @@
 #define ARBEIDSKRAV_UTILS_H
 
 #include <iostream>
+#include <algorithm>
 #include <SDL.h>
 #include <tuple>
 
 class Utils {
 public:
+    static std::string randomString(size_t length);
     static const char* stringToChar(std::string str);
     static std::string intToString(int num);
 
