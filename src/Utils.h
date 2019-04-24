@@ -7,11 +7,15 @@
 
 #include <iostream>
 #include <SDL.h>
+#include <tuple>
 
 class Utils {
 public:
     static const char* stringToChar(std::string str);
     static std::string intToString(int num);
+
+    static SDL_Window* getWindow();
+    static SDL_Renderer* getRenderer();
 
     static void message(std::string msg);
     static void error(std::string msg);

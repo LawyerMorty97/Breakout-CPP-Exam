@@ -29,3 +29,11 @@ void Utils::error_sdl(std::string msg) {
     SDL_Quit();
     exit(EXIT_FAILURE);
 }
+
+SDL_Window* Utils::getWindow() {
+    return SDL_GL_GetCurrentWindow();
+}
+
+SDL_Renderer* Utils::getRenderer() {
+    return SDL_GetRenderer(getWindow());
+}

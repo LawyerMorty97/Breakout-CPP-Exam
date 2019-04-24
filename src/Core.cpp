@@ -22,8 +22,16 @@ void Core::Setup(std::string title, int w_size, int h_size) {
     SetupSDL();
     setup = true;
 
-    imageManager->Add("lmorty.bmp", 0, 0, 128, 128);
-    imageManager->Add("rick.bmp", 128, 0, 128, 128);
+    SDL_ShowCursor(false);
+
+    Screen::instance()->set(w_width, w_height);
+
+    std::tuple<int, int> lpos = Screen::instance()->corner(128, 128, Screen::BottomLeft);
+    imageManager->Add("morty", "lmorty.bmp", std::get<0>(lpos), std::get<1>(lpos), 128, 128);
+    imageManager->Add("rick", "rick.bmp", 128, 0, 128, 128);
+    cursor = new Image("cursor.png", 0, 0, 32, 32);
+
+    info = new Info;
 
     while (!quit) {
         Update();
@@ -36,6 +44,8 @@ void Core::Setup(std::string title, int w_size, int h_size) {
 void Core::Quit() {
     delete input;
     delete imageManager;
+    delete cursor;
+    delete info;
 
     Utils::message("Deinitialized ImGui");
     ImGuiSDL::Deinitialize();
@@ -49,6 +59,8 @@ void Core::Quit() {
     Utils::message("Destroyed ImGui Context");
     ImGui::DestroyContext();
 
+    TTF_Quit();
+
     SDL_Quit();
     Utils::message("Quit SDL");
 
@@ -60,6 +72,9 @@ void Core::SetupSDL() {
         Utils::error_sdl("Unable to initalize SDL");
     else
         Utils::message("Initialized SDL");
+
+    TTF_Init();
+    IMG_Init(IMG_INIT_PNG);
 
     const char* c_title = Utils::stringToChar(title);
 
@@ -80,16 +95,19 @@ void Core::SetupSDL() {
     ImGui::CreateContext();
     ImGuiSDL::Initialize(renderer, w_width, w_height);
 
-    imageManager = ImageManager::instance(renderer);
+    Window = window;
+    Renderer = renderer;
+
+    imageManager = ImageManager::instance();
     input = InputManager::instance();
 }
 
 void Core::Update() {
     ImGuiIO& io = ImGui::GetIO();
-
     while(SDL_PollEvent(&event)) {
-        if (event.type == SDL_QUIT)
+        if (event.type == SDL_QUIT) {
             quit = true;
+        }
         else if (event.type == SDL_WINDOWEVENT) {
             if (event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
                 io.DisplaySize.x = static_cast<float>(event.window.data1);
@@ -97,62 +115,27 @@ void Core::Update() {
             }
         }
     }
+
+    m_dt_now = SDL_GetTicks();
+    if (m_dt_now > m_dt_last) {
+        m_deltaTime = ((float)(m_dt_now - m_dt_last)) / 1000;
+    }
+
     input->Update();
 
     io.DeltaTime = 1.f / 60.f;
-    int x;
+    /*int x;
     int y;
-    const int btns = SDL_GetMouseState(&x, &y);
+    const int btns = SDL_GetMouseState(&x, &y);*/
+    int x, y;
+    x = std::get<0>(input->MousePosition());
+    y = std::get<1>(input->MousePosition());
+
     io.MousePos = ImVec2(x, y);
-    io.MouseDown[0] = btns & SDL_BUTTON(SDL_BUTTON_LEFT);
-    io.MouseDown[1] = btns & SDL_BUTTON(SDL_BUTTON_RIGHT);
+    io.MouseDown[0] = input->MouseStillDown(SDL_BUTTON_LEFT);
+    io.MouseDown[1] = input->MouseStillDown(SDL_BUTTON_RIGHT);
 
-
-    if (input->KeyUp(SDL_SCANCODE_ESCAPE))
-        quit = true;
-
-    Image* image1 = imageManager->Get(0);
-    Image* image2 = imageManager->Get(1);
-
-    if (input->KeyStillDown(SDL_SCANCODE_A)) {
-        image1->setPosition(image1->x - 0.1f, image1->y);
-        std::cout << "Pressed A" << std::endl;
-    }
-
-    if (input->KeyStillDown(SDL_SCANCODE_D)) {
-        image1->setPosition(image1->x + 0.1f, image1->y);
-        std::cout << "Pressed D" << std::endl;
-    }
-
-    if (input->KeyStillDown(SDL_SCANCODE_W)) {
-        image1->setPosition(image1->x, image1->y - 0.1f);
-        std::cout << "Pressed W" << std::endl;
-    }
-
-    if (input->KeyStillDown(SDL_SCANCODE_S)) {
-        image1->setPosition(image1->x, image1->y + 0.1f);
-        std::cout << "Pressed S" << std::endl;
-    }
-
-    if (input->KeyStillDown(SDL_SCANCODE_LEFT)) {
-        image2->setPosition(image2->x - 0.1f, image2->y);
-        std::cout << "Pressed Left Directional" << std::endl;
-    }
-
-    if (input->KeyStillDown(SDL_SCANCODE_RIGHT)) {
-        image2->setPosition(image2->x + 0.1f, image2->y);
-        std::cout << "Pressed Right Directional" << std::endl;
-    }
-
-    if (input->KeyStillDown(SDL_SCANCODE_UP)) {
-        image2->setPosition(image2->x, image2->y - 0.1f);
-        std::cout << "Pressed Up Directional" << std::endl;
-    }
-
-    if (input->KeyStillDown(SDL_SCANCODE_DOWN)) {
-        image2->setPosition(image2->x, image2->y + 0.1f);
-        std::cout << "Pressed Down Directional" << std::endl;
-    }
+    cursor->setPosition(Image::Set, x, y);
 }
 
 void Core::Draw() {
@@ -163,11 +146,14 @@ void Core::Draw() {
 
     ImGui::SetNextWindowBgAlpha(0.3f);
     ImGui::Begin("SDL Arbeidskrav", NULL, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav);
-    ImGui::Button("Test", ImVec2(100, 20));
+    if (ImGui::Button("Quit", ImVec2(100, 20))) {
+        quit = true;
+    }
     ImGui::Text("Moving Image 1:\nUse WASD to control the 1st image\n\nMoving Image 2:\nUse the directional keys to control the 2nd image");
     ImGui::Separator();
 
-    ImGui::Text("Mouse Position: (%.1f, %.1f)", std::get<0>(input->MousePosition()), std::get<1>(input->MousePosition()));
+    ImGui::Text("Delta Time: %f", (m_deltaTime * 100));
+    ImGui::Text("Mouse Position: (%d, %d)", std::get<0>(input->MousePosition()), std::get<1>(input->MousePosition()));
     if (ImGui::IsMousePosValid())
         ImGui::Text("ImGui Mouse Position: (%.1f, %.1f)", io.MousePos.x, io.MousePos.y);
     else
@@ -177,13 +163,15 @@ void Core::Draw() {
     }
     ImGui::End();
 
-    SDL_SetRenderDrawColor(renderer, 128, 255, 128, 255); // Light Green
+    SDL_SetRenderDrawColor(renderer, 150, 150, 150, 255); // Background Color
     SDL_RenderClear(renderer);
 
     imageManager->Draw();
+    info->Draw();
 
     ImGui::Render();
     ImGuiSDL::Render(ImGui::GetDrawData());
+    cursor->Draw();
 
     SDL_RenderPresent(renderer);
 }

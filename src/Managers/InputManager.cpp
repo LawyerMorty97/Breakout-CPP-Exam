@@ -21,7 +21,7 @@ void InputManager::Update() {
     SDL_PumpEvents();
 
     m_keys = SDL_GetKeyboardState(&m_keyCount);
-    m_buttons = SDL_GetRelativeMouseState(&m_mouseX, &m_mouseY);
+    m_buttons = SDL_GetMouseState(&m_mouseX, &m_mouseY);
 
 }
 

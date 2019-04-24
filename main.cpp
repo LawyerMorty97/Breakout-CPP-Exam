@@ -6,7 +6,7 @@ Core* core;
 
 int main() {
     core = Core::instance();
-    core->Setup("Hello World", 800, 600);
+    core->Setup("Hello World", 1280, 720);
 
     delete core;
 
