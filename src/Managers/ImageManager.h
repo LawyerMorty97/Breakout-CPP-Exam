@@ -20,6 +20,13 @@ public:
 
     Image* Add(std::string name, std::string file, int x, int y, int w, int h);
     Image* Get(std::string name);
+
+    void Remove(std::string name);
+    void Remove(Image* image);
+
+    int Size();
+
+    Image* Clone(std::string name, int x, int y, int w, int h);
     Image* Clone(std::string name);
     void Draw();
 protected:

@@ -19,17 +19,18 @@ public:
     SDL_Surface* surface;
     SDL_Texture* texture;
 
-    Image(std::string filename, int x, int y, int w, int h);
+    Image(std::string filename, float x, float y, float w, float h);
     ~Image();
 
     std::string filename;
 
+    void ChangeImage(std::string name);
     bool Draw();
 
-    std::pair<int, int> GetSurfaceSize();
+    std::pair<float, float> GetSurfaceSize();
 
-    void setColor(int r, int g, int b, int a = 255);
-    std::tuple<int, int, int, int> getColor();
+    void setColor(float r, float g, float b, float a = 255);
+    std::tuple<float, float, float, float> getColor();
 
     void setViewable(bool toggle);
     bool isViewable();

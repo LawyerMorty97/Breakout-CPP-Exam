@@ -6,6 +6,7 @@
 #define C_EXAM_SCREEN_H
 
 #include <tuple>
+#include "IPosition.h"
 
 class Screen {
 public:
@@ -21,11 +22,11 @@ public:
 
     const int &ScreenWidth, &ScreenHeight;
 
-    std::pair<int, int> center();
-    std::pair<int, int> center(int x, int y);
+    IPosition::vec2 center();
+    IPosition::vec2 center(int x, int y);
 
-    std::pair<int, int> corner(ScreenCorners corner = TopLeft);
-    std::pair<int, int> corner(int x, int y, ScreenCorners corner = TopLeft);
+    IPosition::vec2 corner(ScreenCorners corner = TopLeft);
+    IPosition::vec2 corner(int x, int y, ScreenCorners corner = TopLeft);
 
     void set(int w, int h);
 private:

@@ -13,20 +13,27 @@
 #include "../Components/Text.h"
 
 #include "../Components/IComponent.h"
+#include "../Components/IGame.h"
 
-class Info : public IComponent {
+class Info : public IComponent, IGame {
 public:
-    Info();
+    Info(const char* name);
     ~Info();
 
     void Draw();
 private:
+    ImageManager* _imgManager;
+    Screen* _screen;
+
     Image* background_header, *background_body;
-    Image* star_a, *star_b;
 
     // Fonts
     Font* chaletBig, *chaletSmall;
     Text* title, *subtitle;
+
+    Text* scoreText, *livesText;
+    Text* gameoverText, *pauseText, *winText;
+
 };
 
 

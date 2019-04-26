@@ -5,64 +5,94 @@
 #include "../Components/IComponent.h"
 #include "Info.h"
 
-Info::Info() {
+Info::Info(const char* name) {
+    _imgManager = GetImageManager();
+    _screen = GetScreen();
+
     // Fonts
     chaletBig = new Font("content/fonts/chalet.ttf", 40);
     chaletSmall = new Font("content/fonts/chalet.ttf", 20);
 
     // Title
-    title = new Text(chaletBig, "Arkenoid");
-    std::pair ttSize = title->getSize();
-    title->setPosition(Text::Set, Screen::instance()->corner(ttSize.first, ttSize.second, Screen::TopRight));
+    title = new Text(chaletBig, name);
+    IPosition::vec2 ttSize = title->getSize();
+    title->setPosition(Text::Set, _screen->corner(ttSize.x, ttSize.y, Screen::TopRight));
 
     // Subtitle
     subtitle = new Text(chaletSmall, "By Mathias Berntsen");
-    std::pair sbSize = subtitle->getSize();
-    subtitle->setPosition(Text::Set, Screen::instance()->corner(sbSize.first, sbSize.second, Screen::TopRight));
+    IPosition::vec2 sbSize = subtitle->getSize();
+    subtitle->setPosition(Text::Set, _screen->corner(sbSize.x, sbSize.y, Screen::TopRight));
 
     const int width = 300;
     const int header_height = 128;
     // Header
-    background_header = ImageManager::instance()->Add("header_bg", "interaction_bgd.png", 0, 0, width, header_height);
-    background_header->setPosition(Image::Set, Screen::instance()->corner(width, header_height, Screen::TopRight));
+    background_header = _imgManager->Add("header_bg", "interaction_bgd.png", 0, 0, width, header_height);
+    background_header->setPosition(Image::Set, _screen->corner(width, header_height, Screen::TopRight));
     // Body
     int h = Screen::instance()->ScreenHeight - header_height;
-    background_body = ImageManager::instance()->Add("gradient_bg", "gradient_bgd.png", 0, 0, width, h);
-    background_body->setPosition(Image::Set, Screen::instance()->corner(width, h, Screen::TopRight));
+    background_body = _imgManager->Add("gradient_bg", "gradient_bgd.png", 0, 0, width, h);
+    background_body->setPosition(Image::Set, _screen->corner(width, h, Screen::TopRight));
     background_body->setPosition(Image::Modify, 0, header_height);
 
     // Header Text
-    int headerX = (-width / 2) + (ttSize.first / 2);
-    int headerY = (header_height / 2) - (ttSize.second / 2);
+    int headerX = (-width / 2) + (ttSize.x / 2);
+    int headerY = (header_height / 2) - (ttSize.y / 2);
     title->setPosition(Text::Modify, headerX, headerY);
 
-    int subX = (-width / 2) + (sbSize.first / 2);
-    int subY = (header_height / 2) + (ttSize.second / 2) + (sbSize.second / 2);
+    int subX = (-width / 2) + (sbSize.x / 2);
+    int subY = (header_height / 2) + (ttSize.y / 2) + (sbSize.y / 2);
     subtitle->setPosition(Text::Modify, subX, subY);
 
-    // Stars
-    star_a = ImageManager::instance()->Add("star", "star.png", 0, 0, 32, 32);
-    star_a->setPosition(Image::Set, background_body->getPosition());
-    star_b = ImageManager::instance()->Clone("star");
+    scoreText = new Text(chaletSmall, "Score: 0");
+    livesText = new Text(chaletSmall, "Lives: 0");
 
-    int sep = 12;
-    for (int i = 0; i < 12; i++) {
-        for (int j = 0; j < 24; j++) {
-            Image* im = ImageManager::instance()->Clone("star");
-            im->setPosition(Image::Modify, i * (12 + sep), j * (12 + sep));
+    gameoverText = new Text(chaletBig, "Game Over");
+    pauseText = new Text(chaletBig, "Paused");
+    winText = new Text(chaletBig, "Congratulations");
 
-        }
-    }
+
+    scoreText->setPosition(Text::Set, background_body->getPosition());
+    scoreText->setPosition(Text::Modify, 150 - (scoreText->getSize().x / 2), 24);
+
+    livesText->setPosition(Text::Set, background_body->getPosition());
+    livesText->setPosition(Text::Modify, 150 - (livesText->getSize().x / 2), 48);
+
+    gameoverText->setPosition(Text::Set, background_body->getPosition());
+    gameoverText->setPosition(Text::Modify, 150 - (gameoverText->getSize().x / 2), background_body->getSize().y - gameoverText->getSize().y - 128);
+
+    pauseText->setPosition(Text::Set, background_body->getPosition());
+    pauseText->setPosition(Text::Modify, 150 - (pauseText->getSize().x / 2), background_body->getSize().y - pauseText->getSize().y - 128);
+
+    winText->setPosition(Text::Set, background_body->getPosition());
+    winText->setPosition(Text::Modify, 150 - (winText->getSize().x / 2), background_body->getSize().y - winText->getSize().y - 128);
 }
 
 Info::~Info() {
-    delete title, subtitle;
+    delete title, subtitle, scoreText, livesText;
     delete chaletBig, chaletSmall;
+
+    delete gameoverText, pauseText;
 }
 
 void Info::Draw() {
     background_header->Draw();
     background_body->Draw();
+
+    std::string score = "Score: " + Utils::intToString(GetGame()->GetScore());
+    std::string lives = "Lives: " + Utils::intToString(GetGame()->GetLives());
+    scoreText->setText(score.c_str());
+    livesText->setText(lives.c_str());
+
     title->Draw();
     subtitle->Draw();
+    scoreText->Draw();
+    livesText->Draw();
+
+    if (GetGame()->IsGamePaused())
+        pauseText->Draw();
+    else if (GetGame()->IsGameOver())
+        if (GetGame()->DidPlayerWin())
+            winText->Draw();
+        else
+            gameoverText->Draw();
 }

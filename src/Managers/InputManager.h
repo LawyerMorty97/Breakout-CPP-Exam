@@ -24,7 +24,9 @@ public:
     bool MouseUp(int iButton);
     bool MouseStillUp(int iButton);
 
-    std::tuple<int, int> MousePosition();
+    std::pair<int, int> MousePosition();
+    bool IsCursorInArea(int x, int y, int w, int h);
+    bool IsCursorInArea(SDL_Rect rect);
 
     void Update();
 

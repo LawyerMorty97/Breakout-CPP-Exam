@@ -19,7 +19,7 @@ public:
     ~Text();
 
     void setColor(Uint8 r, Uint8 g, Uint8 b);
-    void setText(char* text);
+    void setText(const char* text);
 
     void Draw();
 private:

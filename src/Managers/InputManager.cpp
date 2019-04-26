@@ -43,7 +43,7 @@ bool InputManager::KeyStillDown(int iKeyIndex) {
     return (current_state && last_state);
 }
 
-std::tuple<int, int> InputManager::MousePosition() {
+std::pair<int, int> InputManager::MousePosition() {
     return {m_mouseX, m_mouseY};
 }
 
@@ -79,4 +79,20 @@ bool InputManager::MouseStillUp(int iButton) {
     bool last_state = m_oldButtons & SDL_BUTTON(iButton);
 
     return (!current_state && !last_state);
+}
+
+bool InputManager::IsCursorInArea(int x, int y, int w, int h) {
+    std::pair mouse_pos = MousePosition();
+
+    if (mouse_pos.first >= x && mouse_pos.first <= w) {
+        if (mouse_pos.second >= y && mouse_pos.second <= h) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool InputManager::IsCursorInArea(SDL_Rect rect) {
+    return IsCursorInArea(rect.x, rect.y, rect.w, rect.h);
 }

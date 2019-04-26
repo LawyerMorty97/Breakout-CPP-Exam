@@ -24,9 +24,9 @@ Text::Text(Font* font, const char* text) {
     updateText();
 }
 
-void Text::setText(char *text) {
+void Text::setText(const char *text) {
     SDL_DestroyTexture(texture);
-    this->text = text;
+    this->text = const_cast<char*>(text);
 
     updateText();
 }

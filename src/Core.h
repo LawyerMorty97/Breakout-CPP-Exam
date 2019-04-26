@@ -14,15 +14,13 @@
 
 #include "Utils.h"
 #include "Managers/InputManager.h"
-
-#include "imgui/imgui.h"
-#include "imgui/imgui_sdl.h"
+#include "Managers/ImageManager.h"
 
 #include "Components/Screen.h"
 #include "Components/Image.h"
-#include "Managers/ImageManager.h"
 
 #include "Gameparts/Info.h"
+#include "Gameparts/Board.h"
 
 class Core {
 public:
@@ -36,7 +34,6 @@ public:
 protected:
     int w_width, w_height; // Window dimensions
     bool quit = false;
-    bool setup = false;
 
     std::string title;
 
@@ -48,13 +45,18 @@ protected:
     ImageManager* imageManager;
 
     Image* cursor;
+
+    Image* lineX, *lineY;
 private:
     static Core* inst_;
 
     // Delta Time
-    long m_dt_now, m_dt_last;
-    float m_deltaTime;
+    Uint32 dtNow, dtLast;
+    float deltaTime;
+
+    // Game Elements
     Info* info;
+    Board* board;
 
     Core() {
 

@@ -13,71 +13,67 @@ Screen* Screen::instance() {
     return inst_;
 }
 
-std::pair<int, int> Screen::center() {
+IPosition::vec2 Screen::center() {
     int centerX = m_screenW / 2;
     int centerY = m_screenH / 2;
 
-    return {centerX, centerY};
+    return IPosition::vec2(centerX, centerY);
 }
 
-std::pair<int, int> Screen::center(int x, int y) {
-    int cX = std::get<0>(center());
-    int cY = std::get<1>(center());
+IPosition::vec2 Screen::center(int x, int y) {
+    IPosition::vec2 c = center() - (IPosition::vec2(x, y) / 2);
 
-    int centerX = cX - (x / 2);
-    int centerY = cY - (y / 2);
-
-    return {centerX, centerY};
+    return c;
 }
 
-std::pair<int, int> Screen::corner(ScreenCorners corner) {
-    int cornerX, cornerY;
+IPosition::vec2 Screen::corner(ScreenCorners corner) {
+    IPosition::vec2 v_corner;
 
     switch(corner) {
         case TopLeft:
-            cornerX = 0;
-            cornerY = 0;
+            v_corner.x = 0;
+            v_corner.y = 0;
             break;
         case TopRight:
-            cornerX = m_screenW;
-            cornerY = 0;
+            v_corner.x = m_screenW;
+            v_corner.y = 0;
             break;
         case BottomLeft:
-            cornerX = 0;
-            cornerY = m_screenH;
+            v_corner.x = 0;
+            v_corner.y = m_screenH;
             break;
         case BottonRight:
-            cornerX = m_screenW;
-            cornerY = m_screenH;
+            v_corner.x = m_screenW;
+            v_corner.y = m_screenH;
             break;
     }
 
-    return {cornerX, cornerY};
+    return v_corner;
 }
 
-std::pair<int, int> Screen::corner(int x, int y, Screen::ScreenCorners corner) {
-    int cornerX, cornerY;
+IPosition::vec2 Screen::corner(int x, int y, Screen::ScreenCorners corner) {
+    IPosition::vec2 v_corner;
 
     switch(corner) {
         case TopLeft:
-            cornerX = 0;
-            cornerY = 0;
+            v_corner.x = 0;
+            v_corner.y = 0;
             break;
         case TopRight:
-            cornerX = m_screenW - x;
-            cornerY = 0;
+            v_corner.x = m_screenW - x;
+            v_corner.y = 0;
             break;
         case BottomLeft:
-            cornerX = 0;
-            cornerY = m_screenH - y;
+            v_corner.x = 0;
+            v_corner.y = m_screenH - y;
             break;
         case BottonRight:
-            cornerX = m_screenW - x;
-            cornerY = m_screenH - y;
+            v_corner.x = m_screenW - x;
+            v_corner.y = m_screenH - y;
             break;
     }
 
-    return {cornerX, cornerY};
+    return v_corner;
 }
 
 void Screen::set(int w, int h) {

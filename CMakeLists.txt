@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(C++_Exam)
+project(Breakout_Exam)
 
 set(EXECUTABLE_OUTPUT_PATH "${PROJECT_SOURCE_DIR}/bin")
 
@@ -36,10 +36,9 @@ else()
 endif()
 
 add_executable(${PROJECT_NAME} main.cpp src/Core.cpp src/Components/Image.cpp src/Utils.cpp src/Managers/InputManager.cpp
-        src/Managers/ImageManager.cpp src/Managers/ImageManager.h imgui/imgui.cpp imgui/imgui_draw.cpp
-        imgui/imgui_sdl.cpp imgui/imgui_widgets.cpp imgui/imgui_demo.cpp src/Components/Screen.cpp
-        src/Gameparts/Info.cpp src/Components/Font.cpp src/Components/Text.cpp src/Components/IComponent.h
-        src/Components/IPosition.h)
+        src/Managers/ImageManager.cpp src/Components/Screen.cpp src/Components/IGame.h src/Gameparts/Info.cpp src/Components/Font.cpp
+        src/Components/Text.cpp src/Components/IComponent.h src/Components/IPosition.h src/Gameparts/Board.cpp
+        src/Managers/GameManager.cpp src/Gameparts/Brick.cpp src/Gameparts/Ball.cpp)
 
 if(${APPLE})
     target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARY} ${SDL2_TTF_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${OPENGL_LIBRARIES})
