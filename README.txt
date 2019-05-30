@@ -6,12 +6,12 @@ Libraries Used:
 When I started with the exam, my goal was to make it easy to manage objects and SDL in general.
 I managed to accomplish this by creating higher level methods for creating surfaces and textures.
 
-I believe my solution is good because it takes the SDL engine and creates a "wrapper" around it
-which makes it easier for the programmer to play around with Images and Text and prototype something
-easily. My solution is also great because a number of core classes are Singletons, which only instance
-once and any class that would need something from the core could just include the class and then get the
-running instance, which in my opinion is neat.
+I believe my result could overall (in terms of gameplay) be improved to a great degree due to there being a fair bit
+of bugs related to the core gameplay. In terms of the code that was written to handling SDL and rendering of text and
+images, I believe the result was great since it simplifies prototyping something and overall reduces the time spent 
+managing everything.
 
-Problems:
-I believe the actual gameplay of my solution is lacking as it's not polished enough.
-Collisions is also a major issue in the solution, since it doesn't work perfectly.
+Problems with the solution:
+- Actually gameplay is way too simple
+- Gameplay is buggy
+- Not enough polish
